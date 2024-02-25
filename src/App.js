@@ -1,17 +1,25 @@
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import Home from "./Home";
-// root component
-function App() {
-  const likes = 50;
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Create from "./Create";
 
+function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <div className="content">
-        <Home />
-        <p>Likes: {likes}</p>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/create">
+              <Create />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 

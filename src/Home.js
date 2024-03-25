@@ -7,7 +7,6 @@ const Home = () => {
     isPending,
     data: blogs,
   } = useFetch("http://localhost:8000/blogs");
-
   return (
     <div className="home">
       {error && <div>{error}</div>}

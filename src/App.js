@@ -7,6 +7,8 @@ import NotFound from "./NotFound";
 import About from "./About";
 import { FaCodepen } from "react-icons/fa";
 import User from "./User";
+import Users from "./Users";
+import Schedule from "./Schedule";
 
 function App() {
   return (
@@ -21,11 +23,17 @@ function App() {
             <Route path="/create">
               <Create />
             </Route>
+            <Route path="/schedule">
+              <Schedule />
+            </Route>
             <Route path="/blogs/:id">
               <BlogDetails />
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/users">
+              <Users />
             </Route>
             <Route path="/user/:id">
               <User />

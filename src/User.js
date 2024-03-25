@@ -1,25 +1,11 @@
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import useFetch from "./useFetch";
 
-const User = ({ users, title }) => {
-  //could just have (props) and the commented out code below. This way is called 'destructuring'
-  // const blogs = props.blogs;
-  // const title = props.title; // passed in as argument of BlogList on Home.js
-  // console.log(blogs);
+const User = () => {
+  const { id } = useParams();
+  const { data: user } = useFetch("http://localhost:8000/users/" + id);
 
-  return (
-    <div className="user-home">
-      <h2>{title}</h2>
-      {users.map((user) => (
-        <div className="blog-preview" key={user.id}>
-          <Link to={`/user/${user.id}`}>
-            <h2>{user.title}</h2>
-          </Link>
-
-          {/* <button onClick={() => handleDelete(blog.id)}>delete blog</button> */}
-        </div>
-      ))}
-    </div>
-  );
+  return <div className="user-home">{user && <p>{user.first_name}</p>}</div>;
 };
 
 export default User;

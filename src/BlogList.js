@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
 
 const BlogList = ({ blogs, title }) => {
-  //could just have (props) and the commented out code below. This way is called 'destructuring'
-  // const blogs = props.blogs;
-  // const title = props.title; // passed in as argument of BlogList on Home.js
-  // console.log(blogs);
-
   return (
     <div className="blog-list">
       <h2>{title}</h2>
